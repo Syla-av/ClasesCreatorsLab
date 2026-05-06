@@ -1232,6 +1232,28 @@ function showNotification(message) {
   }, 3000);
 }
 
+// Save reservation data to Supabase for analytics
+async function saveReservationToSupabase(reservationData) {
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/reservations`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(reservationData)
+    });
+    
+    if (!response.ok) {
+      console.error('Error saving reservation:', response.statusText);
+    }
+  } catch (error) {
+    console.error('Error saving reservation to Supabase:', error);
+  }
+}
+
 // ===== SCHEDULE MODAL FUNCTIONS =====
 let selectedDays = new Set();
 let savedSchedules = [];
@@ -1325,18 +1347,33 @@ function addSchedule() {
     startTime: startTime
   };
   
+  // Track reservation data for analytics
+  const reservationData = {
+    session_name: sessionName,
+    selected_day: selectedDay, 
+    start_time: startTime,
+    reservation_timestamp: new Date().toISOString(),
+    user_timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    calendar_type: 'Creators_Lab',
+    page: 'CalendarioCreators.html'
+  };
+  
+  // Save reservation data asynchronously (don't wait for it)
+  saveReservationToSupabase(reservationData);
+  
   // Save to Google Calendar first
   saveScheduleToGoogleCalendar(newSchedule);
   
   // Add to visual list
   savedSchedules.push(newSchedule);
+  renderScheduleList();
   
   // Reset form
   document.getElementById('sessionName').value = 'Sesión de estudio Creators Lab';
   document.getElementById('daySelect').value = '';
+  document.getElementById('startTime').value = '';
+  document.getElementById('sessionNameDisplay').textContent = '';
   
-  updateSessionNameDisplay();
-  renderScheduleList();
   showNotification('✅ Sesión guardada en Google Calendar');
 }
 
@@ -1630,3 +1667,4 @@ function closeBothModals() {
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e5c15bca76b7b87',t:'MTc3NTA5MzYwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
