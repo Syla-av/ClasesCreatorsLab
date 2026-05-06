@@ -115,9 +115,9 @@
   <div class="w-full" style="background-color: #3e0079; min-height: 100%;">
    <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
     <!-- Header -->
-    <header class="mb-12">
-      <!-- Planifica tus sesiones Button - Desktop (Top Right) -->
-      <div class="hidden sm:block absolute top-0 right-0 mt-4">
+    <header class="mb-12 relative">
+      <!-- Planifica tus sesiones Button - Top Right -->
+      <div class="absolute top-0 right-0">
         <button id="schedule-btn" onclick="openScheduleModal()" class="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-white text-sm transition-all hover:scale-105" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4); border: none; cursor: pointer; display: flex; align-items: center; gap: 8px;"> 
           <i data-lucide="calendar-plus" style="width:18px;height:18px;"></i> 
           <span>Planifica tus sesiones</span> 
@@ -127,15 +127,7 @@
       <!-- Center Content -->
       <div class="text-center">
         <h1 id="page-title" class="text-4xl sm:text-5xl font-bold mb-3" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #fbbf24 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Horario de Clases</h1>
-        <p id="page-subtitle" class="text-xl text-white font-medium mb-4">Mayo 2026</p>
-        
-        <!-- Planifica tus sesiones Button - Mobile (After title) -->
-        <div class="sm:hidden mb-4">
-          <button id="schedule-btn-mobile" onclick="openScheduleModal()" class="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-white text-sm transition-all hover:scale-105 mx-auto" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4); border: none; cursor: pointer; display: flex; align-items: center; gap: 8px;"> 
-            <i data-lucide="calendar-plus" style="width:18px;height:18px;"></i> 
-            <span>Planifica tus sesiones</span> 
-          </button>
-        </div>
+        <p id="page-subtitle" class="text-xl text-white font-medium">Mayo 2026</p>
         <div class="mt-4 inline-flex flex-col items-center gap-2 px-6 py-3 bg-white rounded-2xl shadow-lg">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -300,53 +292,43 @@ let selectedFile = null; // Archivo seleccionado para subir
     const classes = [
       {
         id: 1,
-        title: "Melissa IA - ¿Cómo crear guiones virales con IA?",
-        instructor: "Melissa IA",
-        start: new Date("2026-05-05T19:00:00-06:00"),
-        end: new Date("2026-05-05T20:00:00-06:00"),
+        title: "Cómo vender más con Facebook Ads",
+        instructor: "Cristhian (Equipo Boost Academy)",
+        start: new Date("2026-05-12T19:00:00-06:00"),
+        end: new Date("2026-05-12T20:00:00-06:00"),
         isEvent: false,
-        zoomLink: "https://us06web.zoom.us/j/82804321739?pwd=bh06bvYMgLqBSxjo0XUyRqQ4x0xzPS.1",
-        coverImage: "https://drive.google.com/thumbnail?id=1OXIE0YCv3RisycVSt1ErBlA6IGEZXIIN&sz=w1000"
+        zoomLink: "https://us06web.zoom.us/j/88337959649?pwd=FH3dGk4Zgj46zubuhUZxPqyDDK5Oam.1",
+        coverImage: "https://drive.google.com/thumbnail?id=1XrPQ8eFD5nfV7CtcS-6zbiVITJQooRBn&sz=w1000"
       },
       {
         id: 2,
-        title: "Aurora – Q&A",
-        instructor: "Aurora",
-        start: new Date("2026-05-13T19:00:00-06:00"),
-        end: new Date("2026-05-13T20:00:00-06:00"),
+        title: "Cómo vender más con tu tienda online",
+        instructor: "Tiendanube",
+        start: new Date("2026-05-19T19:00:00-06:00"),
+        end: new Date("2026-05-19T20:00:00-06:00"),
         isEvent: false,
-        zoomLink: "https://us06web.zoom.us/j/89469421859?pwd=oRbMhMdVKd2amSG9NbqBN2jIl5MLD6.1",
-        coverImage: "https://drive.google.com/thumbnail?id=1SPTTZVPfn798A-A7swKpEjQfrHay_X4u&sz=w1000"
-      },
-      {
-        id: 3,
-        title: "Aurora – Q&A",
-        instructor: "Aurora",
-        start: new Date("2026-05-21T19:00:00-06:00"),
-        end: new Date("2026-05-21T20:00:00-06:00"),
-        isEvent: false,
-        zoomLink: "https://us06web.zoom.us/j/84118549997?pwd=UT4iyrChv7kNHbxPXTzlaz9ZOshYbi.1",
+        zoomLink: "https://us06web.zoom.us/j/89718748529?pwd=wYBB5koeKZY3q18NtKpabazg01xf7c.1",
         coverImage: "https://drive.google.com/thumbnail?id=1AP5709l2azMO_WfUtIc7BTnGZeFPMZPa&sz=w1000"
       },
       {
+        id: 3,
+        title: "Cómo crear un agente de ventas con IA y vender más",
+        instructor: "Funnelchat",
+        start: new Date("2026-05-26T19:00:00-06:00"),
+        end: new Date("2026-05-26T20:00:00-06:00"),
+        isEvent: false,
+        zoomLink: "https://us06web.zoom.us/j/83790833763?pwd=VWJJtk8uJXaVKmCK0KSV6Dkta5H2HC.1",
+        coverImage: "https://drive.google.com/thumbnail?id=1IlrD2F0P_I5-21vmt-9IGxJNcjOiXCH7&sz=w1000"
+      },
+      {
         id: 4,
-        title: "Melissa Arria – Cómo crear carruseles virales",
+        title: "Cómo crear carruseles virales",
         instructor: "Melissa Arria",
         start: new Date("2026-05-27T19:00:00-06:00"),
         end: new Date("2026-05-27T20:00:00-06:00"),
         isEvent: false,
         zoomLink: "https://us06web.zoom.us/j/83637956889?pwd=MKXS5Z8ATshd2chRuA8dWDwag6Nldt.1",
-        coverImage: "https://drive.google.com/thumbnail?id=11i_W8PlTsVJ4IPsy25POTOgCJd_LQUs3&sz=w1000"
-      },
-      {
-        id: 5,
-        title: "Aurora – Q&A",
-        instructor: "Aurora",
-        start: new Date("2026-05-25T19:00:00-06:00"),
-        end: new Date("2026-05-25T20:00:00-06:00"),
-        isEvent: false,
-        zoomLink: "https://us06web.zoom.us/j/84118549997?pwd=UT4iyrChv7kNHbxPXTzlaz9ZOshYbi.1",
-        coverImage: "https://drive.google.com/thumbnail?id=1SPTTZVPfn798A-A7swKpEjQfrHay_X4u&sz=w1000"
+        coverImage: "https://drive.google.com/thumbnail?id=1ZZVoT6cNxVaZe3kyVzOP9NA8tmAPFZiW&sz=w1000"
       }
     ];
 
