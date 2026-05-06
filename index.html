@@ -127,7 +127,15 @@
       <!-- Center Content -->
       <div class="text-center">
         <h1 id="page-title" class="text-4xl sm:text-5xl font-bold mb-3" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #fbbf24 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Horario de Clases</h1>
-        <p id="page-subtitle" class="text-xl text-white font-medium">Mayo 2026</p>
+        <p id="page-subtitle" class="text-xl text-white font-medium mb-4">Mayo 2026</p>
+        
+        <!-- Planifica tus sesiones Button - Mobile (After subtitle) -->
+        <div class="sm:hidden mb-4">
+          <button id="schedule-btn-mobile" onclick="openScheduleModal()" class="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-white text-sm transition-all hover:scale-105 mx-auto" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4); border: none; cursor: pointer; display: flex; align-items: center; gap: 8px;"> 
+            <i data-lucide="calendar-plus" style="width:18px;height:18px;"></i> 
+            <span>Planifica tus sesiones</span> 
+          </button>
+        </div>
         <div class="mt-4 inline-flex flex-col items-center gap-2 px-6 py-3 bg-white rounded-2xl shadow-lg">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
