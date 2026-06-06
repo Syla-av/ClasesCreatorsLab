@@ -385,8 +385,74 @@ let selectedFile = null; // Archivo seleccionado para subir
       }
     ];
 
+    const classes = [
+      {
+        id: 1,
+        title: "Herramientas para vender más en tú negocio",
+        instructor: "Rafael Arria",
+        start: new Date("2026-06-09T19:00:00-06:00"),
+        end: new Date("2026-06-09T20:00:00-06:00"),
+        isEvent: false,
+        zoomLink: "https://us06web.zoom.us/j/87012358603?pwd=Ok9xd9Uq4dhwug36mJB3Tzg56SmH2e.1",
+        coverImage: "https://drive.google.com/thumbnail?id=17k6HDcgVVePuB4DKu_4g4i0rEfWAj9iN&sz=w1000"
+      },
+      {
+        id: 2,
+        title: "Cómo usar la IA para vender más",
+        instructor: "Sveidy-Boost Academy",
+        start: new Date("2026-06-16T19:00:00-06:00"),
+        end: new Date("2026-06-16T20:00:00-06:00"),
+        isEvent: false,
+        zoomLink: "https://us06web.zoom.us/j/84172326055?pwd=zf3s3hltVVJjnXG5ZS4S7j9X4hYf13.1",
+        coverImage: "https://drive.google.com/thumbnail?id=19sY01cdIzePuIjBRWVuWvNbVFaIMjzZz&sz=w1000"
+      },
+      {
+        id: 3,
+        title: "Sesión de Implementación",
+        instructor: "Melissa Arria",
+        start: new Date("2026-06-25T19:00:00-06:00"),
+        end: new Date("2026-06-25T20:00:00-06:00"),
+        isEvent: false,
+        zoomLink: "https://us06web.zoom.us/j/81165035525?pwd=Urj9iXbr2bimV3rXjA3UbEE6ZmkCIu.1",
+        coverImage: "https://drive.google.com/thumbnail?id=1EBCKs1KC_gsvt34MQAgsKakii8tzBDL1&sz=w1000"
+      },
+      {
+        id: 4,
+        title: "Graduación Boost Academy",
+        instructor: "Dirección: IOS Offices CDMX",
+        start: new Date("2026-06-27T10:00:00-06:00"),
+        end: new Date("2026-06-27T13:00:00-06:00"),
+        isEvent: true,
+        location: "IOS Offices CDMX",
+        coverImage: "https://drive.google.com/thumbnail?id=1qOJXocxsWBmZrswpT2DVb0zPa_FONLmL&sz=w1000"
+      }
+    ];
+
+    const challenges = [
+      {
+        id: 101,
+        title: "Reto #1",
+        description: "¡Participa y comparte tu talento con la comunidad!",
+        start: new Date("2026-06-11T16:00:00-06:00"),
+        end: new Date("2026-06-12T23:59:59-06:00"),
+        isChallenge: true,
+        emoji: "🎯"
+      },
+      {
+        id: 102,
+        title: "Reto #2",
+        description: "¡Demuestra tu creatividad y destaca entre los mejores!",
+        start: new Date("2026-06-25T16:00:00-06:00"),
+        end: new Date("2026-06-26T23:59:59-06:00"),
+        isChallenge: true,
+        emoji: "✨"
+      }
+    ];
+
     // Calendario de Junio
-    const allEvents = [
+    const allEvents = [...classes, ...challenges];
+
+    const archivedJuneEvents = [
       {
         id: 1,
         title: "Herramientas para vender más en tú negocio",
