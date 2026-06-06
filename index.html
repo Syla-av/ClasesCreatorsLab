@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horario de Clases - Mayo 2026</title>
+  <title>Horario de Clases - Junio 2026</title>
   <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <style>
@@ -127,7 +127,7 @@
       <!-- Center Content -->
       <div class="text-center">
         <h1 id="page-title" class="text-4xl sm:text-5xl font-bold mb-3" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #fbbf24 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Horario de Clases</h1>
-        <p id="page-subtitle" class="text-xl text-white font-medium mb-4">Mayo 2026</p>
+        <p id="page-subtitle" class="text-xl text-white font-medium mb-4">Junio 2026</p>
         
         <!-- Planifica tus sesiones Button - Mobile (After subtitle) -->
         <div class="sm:hidden mb-4">
@@ -292,7 +292,7 @@ let selectedFile = null; // Archivo seleccionado para subir
 
     const defaultConfig = {
       page_title: "Calendario de Clases y Retos",
-      page_subtitle: "Mayo 2026",
+      page_subtitle: "Junio 2026",
       background_color: "#faf5ff",
       card_background: "#ffffff",
       primary_color: "#7c3aed",
@@ -385,8 +385,49 @@ let selectedFile = null; // Archivo seleccionado para subir
       }
     ];
 
-    // Combinar clases y retos
-    const allEvents = [...classes, ...challenges];
+    // Calendario de Junio
+    const allEvents = [
+      {
+        id: 1,
+        title: "Herramientas para vender más en tú negocio",
+        instructor: "Rafael Arria",
+        start: new Date("2026-06-09T19:00:00-06:00"),
+        end: new Date("2026-06-09T20:00:00-06:00"),
+        isEvent: false,
+        zoomLink: "https://us06web.zoom.us/j/87012358603?pwd=Ok9xd9Uq4dhwug36mJB3Tzg56SmH2e.1",
+        coverImage: "https://drive.google.com/thumbnail?id=17k6HDcgVVePuB4DKu_4g4i0rEfWAj9iN&sz=w1000"
+      },
+      {
+        id: 2,
+        title: "Cómo usar la IA para vender más",
+        instructor: "Sveidy-Boost Academy",
+        start: new Date("2026-06-16T19:00:00-06:00"),
+        end: new Date("2026-06-16T20:00:00-06:00"),
+        isEvent: false,
+        zoomLink: "https://us06web.zoom.us/j/84172326055?pwd=zf3s3hltVVJjnXG5ZS4S7j9X4hYf13.1",
+        coverImage: "https://drive.google.com/thumbnail?id=19sY01cdIzePuIjBRWVuWvNbVFaIMjzZz&sz=w1000"
+      },
+      {
+        id: 3,
+        title: "Sesión de Implementación",
+        instructor: "Melissa Arria",
+        start: new Date("2026-06-25T19:00:00-06:00"),
+        end: new Date("2026-06-25T20:00:00-06:00"),
+        isEvent: false,
+        zoomLink: "https://us06web.zoom.us/j/81165035525?pwd=Urj9iXbr2bimV3rXjA3UbEE6ZmkCIu.1",
+        coverImage: "https://drive.google.com/thumbnail?id=1EBCKs1KC_gsvt34MQAgsKakii8tzBDL1&sz=w1000"
+      },
+      {
+        id: 4,
+        title: "Graduación Boost Academy",
+        instructor: "Dirección: IOS Offices CDMX",
+        start: new Date("2026-06-27T10:00:00-06:00"),
+        end: new Date("2026-06-27T13:00:00-06:00"),
+        isEvent: true,
+        location: "IOS Offices CDMX",
+        coverImage: "https://drive.google.com/thumbnail?id=1qOJXocxsWBmZrswpT2DVb0zPa_FONLmL&sz=w1000"
+      }
+    ];
 
     function getClassStatus(classData, now) {
       if (now >= classData.start && now < classData.end) {
@@ -443,8 +484,8 @@ let selectedFile = null; // Archivo seleccionado para subir
         action: 'TEMPLATE',
         text: classData.title,
         dates: `${formatDateForGoogle(classData.start)}/${formatDateForGoogle(classData.end)}`,
-        details: `Instructor: ${classData.instructor}`,
-        location: 'Clase online',
+        details: classData.location ? `${classData.instructor}\nDirección: ${classData.location}` : `Instructor: ${classData.instructor}`,
+        location: classData.location || 'Clase online',
         ctz: 'America/Mexico_City'
       });
 
