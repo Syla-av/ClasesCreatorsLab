@@ -302,7 +302,7 @@ let selectedFile = null; // Archivo seleccionado para subir
       font_size: 16
     };
 
-    const classes = [
+    const archivedMayClasses = [
       {
         id: 1,
         title: "Cómo vender más con Facebook Ads",
@@ -346,7 +346,7 @@ let selectedFile = null; // Archivo seleccionado para subir
     ];
 
     // Retos de los jueves
-    const challenges = [
+    const archivedMayChallenges = [
       {
         id: 101,
         title: "Reto #1",
@@ -408,6 +408,15 @@ let selectedFile = null; // Archivo seleccionado para subir
         coverImage: "https://drive.google.com/thumbnail?id=19sY01cdIzePuIjBRWVuWvNbVFaIMjzZz&sz=w1000"
       },
       {
+        id: 101,
+        title: "Reto #1",
+        description: "¡Participa y comparte tu talento con la comunidad!",
+        start: new Date("2026-06-11T16:00:00-06:00"),
+        end: new Date("2026-06-12T23:59:59-06:00"),
+        isChallenge: true,
+        emoji: "🎯"
+      },
+      {
         id: 3,
         title: "Sesión de Implementación",
         instructor: "Melissa Arria",
@@ -416,6 +425,15 @@ let selectedFile = null; // Archivo seleccionado para subir
         isEvent: false,
         zoomLink: "https://us06web.zoom.us/j/81165035525?pwd=Urj9iXbr2bimV3rXjA3UbEE6ZmkCIu.1",
         coverImage: "https://drive.google.com/thumbnail?id=1EBCKs1KC_gsvt34MQAgsKakii8tzBDL1&sz=w1000"
+      },
+      {
+        id: 102,
+        title: "Reto #2",
+        description: "¡Demuestra tu creatividad y destaca entre los mejores!",
+        start: new Date("2026-06-25T16:00:00-06:00"),
+        end: new Date("2026-06-26T23:59:59-06:00"),
+        isChallenge: true,
+        emoji: "✨"
       },
       {
         id: 4,
@@ -771,7 +789,7 @@ let selectedFile = null; // Archivo seleccionado para subir
       const countdownEl = document.getElementById('next-class-countdown');
       
       // Encontrar la siguiente clase (pr��xima o en curso)
-      const upcomingClasses = classes
+      const upcomingClasses = allEvents
         .filter(c => now < c.end)
         .sort((a, b) => a.start - b.start);
       
@@ -808,7 +826,7 @@ let selectedFile = null; // Archivo seleccionado para subir
     function updateCountdowns() {
       const now = new Date();
       
-      classes.forEach(classData => {
+      allEvents.forEach(classData => {
         const countdownEl = document.querySelector(`[data-countdown="${classData.id}"]`);
         if (!countdownEl) return;
 
