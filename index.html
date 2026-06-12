@@ -115,8 +115,8 @@
   <div class="w-full" style="background-color: #3e0079; min-height: 100%;">
    <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
     <!-- Header -->
-    <header class="mb-12 relative">
-      <!-- Planifica tus sesiones Button - Top Right -->
+    <header class="mb-12">
+      <!-- Planifica tus sesiones Button - Desktop (Top Right) -->
       <div class="hidden sm:block absolute top-0 right-0 mt-4">
         <button id="schedule-btn" onclick="openScheduleModal()" class="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-white text-sm transition-all hover:scale-105" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4); border: none; cursor: pointer; display: flex; align-items: center; gap: 8px;"> 
           <i data-lucide="calendar-plus" style="width:18px;height:18px;"></i> 
@@ -129,7 +129,7 @@
         <h1 id="page-title" class="text-4xl sm:text-5xl font-bold mb-3" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #fbbf24 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Horario de Clases</h1>
         <p id="page-subtitle" class="text-xl text-white font-medium mb-4">Junio 2026</p>
         
-        <!-- Planifica tus sesiones Button - Mobile (After subtitle) -->
+        <!-- Planifica tus sesiones Button - Mobile (After title) -->
         <div class="sm:hidden mb-4">
           <button id="schedule-btn-mobile" onclick="openScheduleModal()" class="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-white text-sm transition-all hover:scale-105 mx-auto" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4); border: none; cursor: pointer; display: flex; align-items: center; gap: 8px;"> 
             <i data-lucide="calendar-plus" style="width:18px;height:18px;"></i> 
@@ -253,7 +253,7 @@
       <div style="margin-bottom:20px;">
         <label for="sessionName" style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:rgba(255,255,255,0.55);display:block;margin-bottom:8px;">Nombre de la sesión</label>
         <div class="sm:flex gap:8px mb-3">
-          <input type="text" id="sessionName" placeholder="Ej: Sesión de estudio Creators Lab" style="flex:1;padding:12px;border-radius:8px;border:1px solid rgba(94,23,235,0.3);background:rgba(94,23,235,0.05);color:#fff;font-size:14px;font-family:inherit;">
+          <input type="text" id="sessionName" placeholder="Ej: Sesión de estudio Boost your Instagram" style="flex:1;padding:12px;border-radius:8px;border:1px solid rgba(94,23,235,0.3);background:rgba(94,23,235,0.05);color:#fff;font-size:14px;font-family:inherit;">
           <button onclick="addSchedule()" class="hidden sm:flex items-center gap-2 px-4 py-3 rounded-lg border-none bg-gradient-to-r from-[#5e17eb] to-[#7c3aed] text-white cursor-pointer text-sm font-semibold transition-all duration-200 hover:shadow-lg">
             <i data-lucide="calendar-plus" style="width:16px;height:16px;"></i>
             <span>Guardar en Google Calendar</span>
@@ -304,37 +304,27 @@ let selectedFile = null; // Archivo seleccionado para subir
 
     const classes = [
       {
-        id: 1,
-        title: "Herramientas para vender más en tú negocio",
-        instructor: "Rafael Arria",
-        start: new Date("2026-06-09T19:00:00-06:00"),
-        end: new Date("2026-06-09T20:00:00-06:00"),
-        isEvent: false,
-        zoomLink: "https://us06web.zoom.us/j/87012358603?pwd=Ok9xd9Uq4dhwug36mJB3Tzg56SmH2e.1",
-        coverImage: "https://drive.google.com/thumbnail?id=17k6HDcgVVePuB4DKu_4g4i0rEfWAj9iN&sz=w1000"
-      },
-      {
-        id: 2,
-        title: "Cómo usar la IA para vender más",
-        instructor: "Sveidy-Boost Academy",
-        start: new Date("2026-06-16T19:00:00-06:00"),
-        end: new Date("2026-06-16T20:00:00-06:00"),
-        isEvent: false,
-        zoomLink: "https://us06web.zoom.us/j/84172326055?pwd=zf3s3hltVVJjnXG5ZS4S7j9X4hYf13.1",
-        coverImage: "https://drive.google.com/thumbnail?id=19sY01cdIzePuIjBRWVuWvNbVFaIMjzZz&sz=w1000"
-      },
-      {
         id: 3,
+        title: "Sesión de Implementación",
+        instructor: "Alexia Tagle",
+        start: new Date("2026-06-03T19:00:00-06:00"),
+        end: new Date("2026-06-03T20:00:00-06:00"),
+        isEvent: false,
+        zoomLink: "https://us06web.zoom.us/j/81740911620?pwd=Q8hmKwu8EUjjkxgMUwZCTCeKbSJzFT.1",
+        coverImage: "https://drive.google.com/thumbnail?id=1HJsOGW48yM-1OWX8iG4orfHGDM5_LK2_&sz=w1000"
+      },
+      {
+        id: 1,
         title: "Sesión de Implementación",
         instructor: "Melissa Arria",
         start: new Date("2026-06-25T19:00:00-06:00"),
         end: new Date("2026-06-25T20:00:00-06:00"),
         isEvent: false,
         zoomLink: "https://us06web.zoom.us/j/81165035525?pwd=Urj9iXbr2bimV3rXjA3UbEE6ZmkCIu.1",
-        coverImage: "https://drive.google.com/thumbnail?id=1EBCKs1KC_gsvt34MQAgsKakii8tzBDL1&sz=w1000"
+        coverImage: "https://drive.google.com/thumbnail?id=18f-Us58oSvEoWW3YNXizzFeVNT9xY5Sx&sz=w1000"
       },
       {
-        id: 4,
+        id: 2,
         title: "Graduación Boost Academy",
         instructor: "Dirección: IOS Offices CDMX",
         start: new Date("2026-06-27T10:00:00-06:00"),
@@ -343,19 +333,10 @@ let selectedFile = null; // Archivo seleccionado para subir
         location: "IOS Offices CDMX",
         zoomLink: "https://us06web.zoom.us/j/89999448755?pwd=yfqaI9PdpXnARWaFi5uGK2RpiOBVjG.1",
         coverImage: "https://drive.google.com/thumbnail?id=1qOJXocxsWBmZrswpT2DVb0zPa_FONLmL&sz=w1000"
-      },
-      {
-        id: 5,
-        title: "Como vender en Redes sociales",
-        instructor: "Alfredo Huerta",
-        start: new Date("2026-06-30T19:00:00-06:00"),
-        end: new Date("2026-06-30T20:00:00-06:00"),
-        isEvent: false,
-        zoomLink: "https://us06web.zoom.us/j/81004989278",
-        coverImage: "https://drive.google.com/thumbnail?id=1rlgLzrcHlIakAuCKIaQXEgLf6B-52Gcd&sz=w1000"
       }
     ];
 
+    // Retos de los jueves
     const challenges = [
       {
         id: 101,
@@ -377,7 +358,7 @@ let selectedFile = null; // Archivo seleccionado para subir
       }
     ];
 
-    // Calendario de Junio
+    // Combinar clases y retos
     const allEvents = [...classes, ...challenges];
 
     function getClassStatus(classData, now) {
@@ -500,7 +481,7 @@ let selectedFile = null; // Archivo seleccionado para subir
           eventTag = '🎪 EVENTO PRESENCIAL';
           const remaining = getTimeRemaining(classData.end, now);
           if (remaining) {
-            countdownText = `▶️ Faltan ${remaining.minutes} min`;
+            countdownText = `▶️ Faltan ${formatTimeRemaining(remaining)}`;
           }
           card.classList.add('status-live');
         } else if (status === 'upcoming') {
@@ -527,7 +508,7 @@ let selectedFile = null; // Archivo seleccionado para subir
           borderColor = 'border-green-500';
           const remaining = getTimeRemaining(classData.end, now);
           if (remaining) {
-            countdownText = `▶️ Faltan ${remaining.minutes} min`;
+            countdownText = `▶️ Faltan ${formatTimeRemaining(remaining)}`;
           }
           card.classList.add('status-live');
         } else if (status === 'upcoming') {
@@ -768,7 +749,7 @@ let selectedFile = null; // Archivo seleccionado para subir
         if (status === 'live') {
           const remaining = getTimeRemaining(classData.end, now);
           if (remaining) {
-            countdownEl.textContent = `▶️ Faltan ${remaining.minutes} min ${remaining.seconds} seg`;
+            countdownEl.textContent = `${classData.isChallenge ? '⏳ Quedan' : '▶️ Faltan'} ${formatTimeRemaining(remaining)}`;
           } else {
             countdownEl.textContent = 'Clase finalizada';
           }
@@ -1177,7 +1158,7 @@ async function submitParticipation() {
       user_timezone: locationData.timezone,
       user_time: locationData.userTime,
       mexico_time: mexicoTime,
-      academy: 'CreatorsLab - Retos'
+      academy: 'BYI - Retos'
     };
     
     console.log('Datos de participación completos:', participationData);
@@ -1250,7 +1231,7 @@ let selectedDays = new Set();
 let savedSchedules = [];
 
 function openScheduleModal() {
-  document.getElementById('sessionName').value = 'Sesión de estudio Creators Lab';
+  document.getElementById('sessionName').value = 'Sesión de estudio Boost your Instagram';
   document.getElementById('daySelect').value = ''; // Clear dropdown selection
   updateSessionNameDisplay();
   initializeScheduleModal();
@@ -1272,7 +1253,7 @@ function updateSessionNameDisplay() {
     if (!selectedDay) {
       displayDiv.textContent = '';
     } else {
-      displayDiv.textContent = `${nameInput.value || 'Sesión de estudio Creators Lab'} - ${selectedDay}`;
+      displayDiv.textContent = `${nameInput.value || 'Sesión de estudio Boost your Instagram'} - ${selectedDay}`;
     }
   }
 }
@@ -1345,8 +1326,8 @@ function addSchedule() {
     start_time: startTime,
     reservation_timestamp: new Date().toISOString(),
     user_timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    calendar_type: 'Creators_Lab',
-    page: 'CalendarioCreators.html'
+    calendar_type: 'Boost_Your_Instagram',
+    page: 'CalendarioBYI.html'
   };
   
   // Save reservation data asynchronously (don't wait for it)
@@ -1357,14 +1338,14 @@ function addSchedule() {
   
   // Add to visual list
   savedSchedules.push(newSchedule);
-  renderScheduleList();
   
   // Reset form
-  document.getElementById('sessionName').value = 'Sesión de estudio Creators Lab';
+  document.getElementById('sessionName').value = 'Sesión de estudio Boost your Instagram';
   document.getElementById('daySelect').value = '';
   document.getElementById('startTime').value = '';
   document.getElementById('sessionNameDisplay').textContent = '';
   
+  renderScheduleList();
   showNotification('✅ Sesión guardada en Google Calendar');
 }
 
@@ -1526,7 +1507,7 @@ function closeBothModals() {
       const today = new Date();
       const dayOfWeek = today.getDay();
       const diff = today.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1);
-      const monday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1));
+      const monday = new Date(today.setDate(diff));
       
       const weekDates = {};
       const dayNames = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
